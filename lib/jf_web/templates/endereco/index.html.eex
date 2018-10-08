@@ -1,14 +1,14 @@
-<h2>Listing Enderecos</h2>
+<h2>Listar Endereços</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Uf</th>
+      <th>UF</th>
       <th>Cidade</th>
-      <th>Endereco</th>
-      <th>Numero</th>
+      <th>Endereço</th>
+      <th>Número</th>
       <th>Complemento</th>
-      <th>Pontoreferencia</th>
+      <th>Ponto referência</th>
       <th>Local</th>
 
       <th></th>
@@ -26,13 +26,13 @@
       <td><%= endereco.local %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: endereco_path(@conn, :show, endereco), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: endereco_path(@conn, :edit, endereco), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Ver", to: endereco_path(@conn, :show, endereco), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: endereco_path(@conn, :edit, endereco), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: endereco_path(@conn, :delete, endereco), method: :delete, data: [confirm: "Tem certeza?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Endereco", to: endereco_path(@conn, :new) %></span>
+<span><%= link "Novo Endereço", to: endereco_path(@conn, :new) %></span>

@@ -1,4 +1,4 @@
-<h2>Edit Cardapio</h2>
+<h2>Editar Cardápio</h2>
 
 <%= render "form.html", Map.put(assigns, :action, cardapio_path(@conn, :update, @cardapio)) %>
 

@@ -1,9 +1,9 @@
-<h2>Show Endereco</h2>
+<h2>Ver Endereço</h2>
 
 <ul>
 
   <li>
-    <strong>Uf:</strong>
+    <strong>UF:</strong>
     <%= @endereco.uf %>
   </li>
 
@@ -13,12 +13,12 @@
   </li>
 
   <li>
-    <strong>Endereco:</strong>
+    <strong>Endereço:</strong>
     <%= @endereco.endereco %>
   </li>
 
   <li>
-    <strong>Numero:</strong>
+    <strong>Número:</strong>
     <%= @endereco.numero %>
   </li>
 
@@ -28,7 +28,7 @@
   </li>
 
   <li>
-    <strong>Pontoreferencia:</strong>
+    <strong>Ponto de referência:</strong>
     <%= @endereco.pontoreferencia %>
   </li>
 
@@ -39,5 +39,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: endereco_path(@conn, :edit, @endereco) %></span>
-<span><%= link "Back", to: endereco_path(@conn, :index) %></span>
+<span><%= link "Editar", to: endereco_path(@conn, :edit, @endereco) %></span>
+<span><%= link "Voltar", to: endereco_path(@conn, :index) %></span>

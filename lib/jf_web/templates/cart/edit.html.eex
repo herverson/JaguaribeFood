@@ -1,0 +1,5 @@
+<h2>Editar Carrinho</h2>
+
+<%= render "form.html", Map.put(assigns, :action, cart_path(@conn, :update, @cart)) %>
+
+<span><%= link "Voltar", to: cart_path(@conn, :index) %></span>

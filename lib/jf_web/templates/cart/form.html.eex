@@ -1,0 +1,41 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor veja os erros.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :id_produto, class: "control-label" %>
+    <%= number_input f, :id_produto, class: "form-control" %>
+    <%= error_tag f, :id_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :nome_produto, class: "control-label" %>
+    <%= text_input f, :nome_produto, class: "form-control" %>
+    <%= error_tag f, :nome_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :quantidade, class: "control-label" %>
+    <%= number_input f, :quantidade, class: "form-control" %>
+    <%= error_tag f, :quantidade %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :preco_unitario, class: "control-label" %>
+    <%= number_input f, :preco_unitario, step: "any", class: "form-control" %>
+    <%= error_tag f, :preco_unitario %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :total, class: "control-label" %>
+    <%= number_input f, :total, step: "any", class: "form-control" %>
+    <%= error_tag f, :total %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Criar", class: "btn btn-primary" %>
+  </div>
+<% end %>

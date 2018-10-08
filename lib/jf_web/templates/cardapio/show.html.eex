@@ -1,8 +1,8 @@
-<h2>Show Cardapio</h2>
+<h2>Ver Cardápio</h2>
 
 <ul>
 
 </ul>
 
-<span><%= link "Edit", to: cardapio_path(@conn, :edit, @cardapio) %></span>
-<span><%= link "Back", to: cardapio_path(@conn, :index) %></span>
+<span><%= link "Editar", to: cardapio_path(@conn, :edit, @cardapio) %></span>
+<span><%= link "Voltar", to: cardapio_path(@conn, :index) %></span>

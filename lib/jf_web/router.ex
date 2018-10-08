@@ -23,6 +23,7 @@ defmodule JfWeb.Router do
     resources "/cardapios", CardapioController
     resources "/restaurantes", RestauranteController
     resources "/pedidos", PedidoController
+    resources "/cart", CartController
 
   end
 

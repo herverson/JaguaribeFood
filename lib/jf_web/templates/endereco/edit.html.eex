@@ -1,5 +1,5 @@
-<h2>Edit Endereco</h2>
+<h2>Editar Endereço</h2>
 
 <%= render "form.html", Map.put(assigns, :action, endereco_path(@conn, :update, @endereco)) %>
 
-<span><%= link "Back", to: endereco_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: endereco_path(@conn, :index) %></span>

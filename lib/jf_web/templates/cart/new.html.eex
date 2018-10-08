@@ -1,0 +1,5 @@
+<h2>Novo Cart</h2>
+
+<%= render "form.html", Map.put(assigns, :action, cart_path(@conn, :create)) %>
+
+<span><%= link "Voltar", to: cart_path(@conn, :index) %></span>

@@ -1,0 +1,33 @@
+<h2>Ver Cart</h2>
+
+<ul>
+
+  <li>
+    <strong>produto:</strong>
+    <%= @cart.id_produto %>
+  </li>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @cart.nome_produto %>
+  </li>
+
+  <li>
+    <strong>Quantidade:</strong>
+    <%= @cart.quantidade %>
+  </li>
+
+  <li>
+    <strong>Preço unitário:</strong>
+    <%= @cart.preco_unitario %>
+  </li>
+
+  <li>
+    <strong>Total:</strong>
+    <%= @cart.total %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: cart_path(@conn, :edit, @cart) %></span>
+<span><%= link "Voltar", to: cart_path(@conn, :index) %></span>

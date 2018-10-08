@@ -1,4 +1,4 @@
-<h2>Show Pedido</h2>
+<h2>Ver Pedido</h2>
 
 <ul>
 
@@ -28,11 +28,11 @@
   </li>
 
   <li>
-    <strong>Endereco:</strong>
+    <strong>Endereço:</strong>
     <%= @pedido.endereco %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: pedido_path(@conn, :edit, @pedido) %></span>
-<span><%= link "Back", to: pedido_path(@conn, :index) %></span>
+<span><%= link "Editar", to: pedido_path(@conn, :edit, @pedido) %></span>
+<span><%= link "Voltar", to: pedido_path(@conn, :index) %></span>

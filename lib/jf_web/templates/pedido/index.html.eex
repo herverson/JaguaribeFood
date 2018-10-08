@@ -24,13 +24,13 @@
       <td><%= pedido.endereco %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: pedido_path(@conn, :show, pedido), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: pedido_path(@conn, :edit, pedido), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: pedido_path(@conn, :delete, pedido), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Ver", to: pedido_path(@conn, :show, pedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: pedido_path(@conn, :edit, pedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: pedido_path(@conn, :delete, pedido), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Pedido", to: pedido_path(@conn, :new) %></span>
+<span><%= link "Novo Pedido", to: pedido_path(@conn, :new) %></span>

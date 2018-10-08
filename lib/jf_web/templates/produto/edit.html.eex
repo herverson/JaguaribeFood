@@ -1,5 +1,5 @@
-<h2>Edit Produto</h2>
+<h2>Editar Produto</h2>
 
 <%= render "form.html", Map.put(assigns, :action, produto_path(@conn, :update, @produto)) %>
 
-<span><%= link "Back", to: produto_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: produto_path(@conn, :index) %></span>

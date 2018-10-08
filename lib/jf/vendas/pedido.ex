@@ -3,7 +3,7 @@ defmodule Jf.Vendas.Pedido do
   import Ecto.Changeset
 
 
-  schema "pedidos" do
+  schema "pedidos" do   
     field :email, :string
     field :endereco, :string
     field :status, :string
