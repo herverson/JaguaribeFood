@@ -1,0 +1,36 @@
+<h2>Listing Pedidos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Total</th>
+      <th>User</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Endereco</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pedido <- @pedidos do %>
+    <tr>
+      <td><%= pedido.status %></td>
+      <td><%= pedido.total %></td>
+      <td><%= pedido.user_id %></td>
+      <td><%= pedido.email %></td>
+      <td><%= pedido.telefone %></td>
+      <td><%= pedido.endereco %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: pedido_path(@conn, :show, pedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: pedido_path(@conn, :edit, pedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: pedido_path(@conn, :delete, pedido), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Pedido", to: pedido_path(@conn, :new) %></span>

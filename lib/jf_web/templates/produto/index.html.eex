@@ -1,0 +1,38 @@
+<h2>Listing Produtos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
+      <th>Preco</th>
+      <th>Imagem</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for produto <- @produtos do %>
+    <tr>
+      <td><%= produto.nome %></td>
+      <td><%= produto.descricao %></td>
+      <td><%= produto.preco %></td>
+      <td><%= produto.imagem %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: produto_path(@conn, :show, produto), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: produto_path(@conn, :edit, produto), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+
+          <%= link to: produto_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+            <i class="material-icons">add</i>
+          <% end %>
+          </a>
+        
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Produto", to: produto_path(@conn, :new) %></span>

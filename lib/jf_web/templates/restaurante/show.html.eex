@@ -1,0 +1,28 @@
+<h2>Show Restaurante</h2>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @restaurante.nome %>
+  </li>
+
+  <li>
+    <strong>Descricao:</strong>
+    <%= @restaurante.descricao %>
+  </li>
+
+  <li>
+    <strong>Endereco:</strong>
+    <%= @restaurante.endereco %>
+  </li>
+
+  <li>
+    <strong>Logo marca:</strong>
+    <%= @restaurante.logo_marca %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: restaurante_path(@conn, :edit, @restaurante) %></span>
+<span><%= link "Back", to: restaurante_path(@conn, :index) %></span>

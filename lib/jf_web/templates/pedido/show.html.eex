@@ -1,0 +1,38 @@
+<h2>Show Pedido</h2>
+
+<ul>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @pedido.status %>
+  </li>
+
+  <li>
+    <strong>Total:</strong>
+    <%= @pedido.total %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @pedido.user_id %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @pedido.email %>
+  </li>
+
+  <li>
+    <strong>Telefone:</strong>
+    <%= @pedido.telefone %>
+  </li>
+
+  <li>
+    <strong>Endereco:</strong>
+    <%= @pedido.endereco %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: pedido_path(@conn, :edit, @pedido) %></span>
+<span><%= link "Back", to: pedido_path(@conn, :index) %></span>

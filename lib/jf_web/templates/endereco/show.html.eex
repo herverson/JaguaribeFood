@@ -1,0 +1,43 @@
+<h2>Show Endereco</h2>
+
+<ul>
+
+  <li>
+    <strong>Uf:</strong>
+    <%= @endereco.uf %>
+  </li>
+
+  <li>
+    <strong>Cidade:</strong>
+    <%= @endereco.cidade %>
+  </li>
+
+  <li>
+    <strong>Endereco:</strong>
+    <%= @endereco.endereco %>
+  </li>
+
+  <li>
+    <strong>Numero:</strong>
+    <%= @endereco.numero %>
+  </li>
+
+  <li>
+    <strong>Complemento:</strong>
+    <%= @endereco.complemento %>
+  </li>
+
+  <li>
+    <strong>Pontoreferencia:</strong>
+    <%= @endereco.pontoreferencia %>
+  </li>
+
+  <li>
+    <strong>Local:</strong>
+    <%= @endereco.local %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: endereco_path(@conn, :edit, @endereco) %></span>
+<span><%= link "Back", to: endereco_path(@conn, :index) %></span>

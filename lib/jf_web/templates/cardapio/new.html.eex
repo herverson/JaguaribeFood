@@ -1,0 +1,5 @@
+<h2>New Cardapio</h2>
+
+<%= render "form.html", Map.put(assigns, :action, cardapio_path(@conn, :create)) %>
+
+<span><%= link "Back", to: cardapio_path(@conn, :index) %></span>

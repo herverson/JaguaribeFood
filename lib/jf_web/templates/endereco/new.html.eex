@@ -1,0 +1,5 @@
+<h2>New Endereco</h2>
+
+<%= render "form.html", Map.put(assigns, :action, endereco_path(@conn, :create)) %>
+
+<span><%= link "Back", to: endereco_path(@conn, :index) %></span>
