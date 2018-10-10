@@ -3,6 +3,8 @@ defmodule JfWeb.ProdutoController do
 
   alias Jf.Catalogo
   alias Jf.Catalogo.Produto
+  plug JfWeb.Plugs.RequireUser when action in [:new]
+
 
   def index(conn, _params) do
     produtos = Catalogo.list_produtos()

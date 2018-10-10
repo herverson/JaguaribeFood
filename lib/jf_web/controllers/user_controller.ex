@@ -1,60 +1,35 @@
 defmodule JfWeb.UserController do
   use JfWeb, :controller
 
+  plug Ueberauth
   alias Jf.Accounts
   alias Jf.Accounts.User
 
-  def index(conn, _params) do
-    users = Accounts.list_users()
-    render(conn, "index.html", users: users)
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    user_params = %{token: auth.credentials.token, email: auth.info.email, provider: "github"}
+    changeset = User.changeset(%User{}, user_params)
+
+    signin conn, changeset
   end
 
-  def new(conn, _params) do
-    changeset = Accounts.change_user(%User{})
-    render(conn, "new.html", changeset: changeset)
-  end
-
-  def create(conn, %{"user" => user_params}) do
-    case Accounts.create_user(user_params) do
-      {:ok, user} ->
-        conn
-        |> put_flash(:info, "User created successfully.")
-        |> redirect(to: user_path(conn, :show, user))
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
-  end
-
-  def show(conn, %{"id" => id}) do
-    user = Accounts.get_user!(id)
-    render(conn, "show.html", user: user)
-  end
-
-  def edit(conn, %{"id" => id}) do
-    user = Accounts.get_user!(id)
-    changeset = Accounts.change_user(user)
-    render(conn, "edit.html", user: user, changeset: changeset)
-  end
-
-  def update(conn, %{"id" => id, "user" => user_params}) do
-    user = Accounts.get_user!(id)
-
-    case Accounts.update_user(user, user_params) do
-      {:ok, user} ->
-        conn
-        |> put_flash(:info, "User updated successfully.")
-        |> redirect(to: user_path(conn, :show, user))
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", user: user, changeset: changeset)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    user = Accounts.get_user!(id)
-    {:ok, _user} = Accounts.delete_user(user)
-
+  def signout(conn, _params) do
     conn
-    |> put_flash(:info, "User deleted successfully.")
-    |> redirect(to: user_path(conn, :index))
+    |> configure_session(drop: true)
+    |> redirect(to: produto_path(conn, :index))
   end
+
+  defp signin(conn, changeset) do
+    case Accounts.insert_or_update_user(changeset) do
+      {:ok, user} ->
+        conn
+        |> put_flash(:info, "Bem vindo!")
+        |> put_session(:user_id, user.id)
+        |> redirect(to: produto_path(conn, :index))
+      {:error, _reason} ->
+        conn
+        |> put_flash(:error, "Erro ao entrar")
+        |> redirect(to: produto_path(conn, :index))
+    end
+  end
+
 end

@@ -3,7 +3,6 @@ defmodule Jf.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :name, :string
       add :email, :string
       add :provider, :string
       add :token, :string

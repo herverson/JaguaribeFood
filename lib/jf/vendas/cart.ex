@@ -4,7 +4,6 @@ defmodule Jf.Vendas.Cart do
 
 
   schema "cart" do
-    field :id_produto, :integer
     field :nome_produto, :string
     field :preco_unitario, :decimal
     field :quantidade, :integer
@@ -16,7 +15,7 @@ defmodule Jf.Vendas.Cart do
   @doc false
   def changeset(cart, attrs) do
     cart
-    |> cast(attrs, [:id_produto, :nome_produto, :quantidade, :preco_unitario, :total])
-    |> validate_required([:id_produto, :nome_produto, :quantidade, :preco_unitario, :total])
+    |> cast(attrs, [:nome_produto, :quantidade, :preco_unitario, :total])
+    |> validate_required([:nome_produto, :quantidade, :preco_unitario, :total])
   end
 end

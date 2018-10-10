@@ -25,3 +25,11 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+config :ueberauth, Ueberauth,
+  providers: [
+    facebook: {Ueberauth.Strategy.Facebook, []}
+  ]
+  config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: "261342004525375",
+  client_secret: "802ecdd32fa34077495845d3aedcf5ae"

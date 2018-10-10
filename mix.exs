@@ -42,7 +42,11 @@ defmodule Jf.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:arc, "~> 0.5.2"},
-      {:arc_ecto, "~> 0.4.4"}
+      {:arc_ecto, "~> 0.4.4"},
+      {:materialize, "~> 0.3.1"},
+      {:distillery, "~> 2.0"},
+      {:ueberauth, "~> 0.4"},
+      {:ueberauth_facebook, "~> 0.7"}
     ]
   end
 

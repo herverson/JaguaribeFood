@@ -5,7 +5,6 @@ defmodule Jf.Accounts.User do
 
   schema "users" do
     field :email, :string
-    field :name, :string
     field :provider, :string
     field :token, :string
 
@@ -15,7 +14,7 @@ defmodule Jf.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :email, :provider, :token])
-    |> validate_required([:name, :email, :provider, :token])
+    |> cast(attrs, [:email, :provider, :token])
+    |> validate_required([:email, :provider, :token])
   end
 end

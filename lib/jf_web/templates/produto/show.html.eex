@@ -26,3 +26,7 @@
 
 <span><%= link "Editar", to: produto_path(@conn, :edit, @produto) %></span>
 <span><%= link "Voltar", to: produto_path(@conn, :index) %></span>
+<%= link to: cart_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+  <i class="material-icons">add</i>
+<% end %>
+</a>

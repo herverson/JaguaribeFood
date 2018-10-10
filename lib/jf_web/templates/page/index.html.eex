@@ -1,32 +1,8 @@
-<h2>Lista Produtos</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Descrição</th>
-      <th>Preço</th>
-      <th>Imagem</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for produto <- @produtos do %>
-    <tr>
-      <td><%= produto.nome %></td>
-      <td><%= produto.descricao %></td>
-      <td><%= produto.preco %></td>
-      <td><%= produto.imagem %></td>
-      <%= link to: produto_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
-        <i class="material-icons">add</i>
-      <% end %>
-      </a>
-
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "novo produto", to: produto_path(@conn, :new) %></span>
+<h1 class="page-title"><%= gettext "Produtos" %></h1>
+<div class="row">
+  <%= for produto <- @produtos do %>
+    <div class="col-md-4">
+      <%= render JfWeb.ProdutoView, "index.html", conn: @conn, produto: produto %>
+    </div>
+  <% end %>
+</div>
