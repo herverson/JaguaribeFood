@@ -1,8 +1,42 @@
-<h1 class="page-title"><%= gettext "Produtos" %></h1>
-<div class="row">
-  <%= for produto <- @produtos do %>
-    <div class="col-md-4">
-      <%= render JfWeb.ProdutoView, "index.html", conn: @conn, produto: produto %>
-    </div>
-  <% end %>
+<div class="popu">
+  
 </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+      <th>Imagem</th>
+      <th>Quantidade</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+<%= for produto <- @produtos do %>
+
+    <tr>
+      <td><%= produto.nome %></td>
+      <td><%= produto.descricao %></td>
+      <td>R$ <%= produto.preco %></td>
+      <td><%= produto.imagem %></td>
+      <form id="form_produto">
+        <div class="input-group">
+          <input id="nome_produto" type="hidden" value="<%= produto.nome %>">
+          <td><input class="form-control" id="quantidade" style="width: 60px" type="number" value="1" min="0"></td>
+          <input id="preco_unitario" type="hidden" value="<%= produto.preco %>">
+          <input id="total" type="hidden" value="<%= produto.preco %>">
+
+        </div>
+
+        <td class="text-right">
+          <button class="btn-floating btn-large waves-effect waves-light green btn-small" type="submit"><i class="material-icons">add</i></button>
+        </td>
+      </form>
+
+    </tr>
+<% end %>
+    </tbody>
+  </table>
