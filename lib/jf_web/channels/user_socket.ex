@@ -2,7 +2,7 @@ defmodule JfWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", JfWeb.RoomChannel
+  channel "carrinho:*", JfWeb.CarrinhoChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

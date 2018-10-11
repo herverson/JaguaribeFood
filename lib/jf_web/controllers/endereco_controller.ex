@@ -18,7 +18,7 @@ defmodule JfWeb.EnderecoController do
     case Enderecos.create_endereco(endereco_params) do
       {:ok, endereco} ->
         conn
-        |> put_flash(:info, "Endereco created successfully.")
+        |> put_flash(:info, "Endereco criado com sucesso.")
         |> redirect(to: endereco_path(conn, :show, endereco))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule JfWeb.EnderecoController do
     case Enderecos.update_endereco(endereco, endereco_params) do
       {:ok, endereco} ->
         conn
-        |> put_flash(:info, "Endereco updated successfully.")
+        |> put_flash(:info, "Endereço alterado com sucesso.")
         |> redirect(to: endereco_path(conn, :show, endereco))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", endereco: endereco, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule JfWeb.EnderecoController do
     {:ok, _endereco} = Enderecos.delete_endereco(endereco)
 
     conn
-    |> put_flash(:info, "Endereco deleted successfully.")
+    |> put_flash(:info, "Endereço deletado com sucesso.")
     |> redirect(to: endereco_path(conn, :index))
   end
 end

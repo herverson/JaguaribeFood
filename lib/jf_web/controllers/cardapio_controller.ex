@@ -18,7 +18,7 @@ defmodule JfWeb.CardapioController do
     case Cardapios.create_cardapio(cardapio_params) do
       {:ok, cardapio} ->
         conn
-        |> put_flash(:info, "Cardapio created successfully.")
+        |> put_flash(:info, "Cardápio criado com sucesso.")
         |> redirect(to: cardapio_path(conn, :show, cardapio))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule JfWeb.CardapioController do
     case Cardapios.update_cardapio(cardapio, cardapio_params) do
       {:ok, cardapio} ->
         conn
-        |> put_flash(:info, "Cardapio updated successfully.")
+        |> put_flash(:info, "Cardápio alterado com sucesso.")
         |> redirect(to: cardapio_path(conn, :show, cardapio))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", cardapio: cardapio, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule JfWeb.CardapioController do
     {:ok, _cardapio} = Cardapios.delete_cardapio(cardapio)
 
     conn
-    |> put_flash(:info, "Cardapio deleted successfully.")
+    |> put_flash(:info, "Cardápio deletado com sucesso.")
     |> redirect(to: cardapio_path(conn, :index))
   end
 end

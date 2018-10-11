@@ -13,7 +13,7 @@ defmodule JfWeb.Plugs.RequireUser do
     else
       conn
       |> put_flash(:error, "Você não está logado.")
-      |> redirect(to: Helpers.produto_path(conn, :index))
+      |> redirect(to: Helpers.page_path(conn, :index))
       |> halt()
     end
   end

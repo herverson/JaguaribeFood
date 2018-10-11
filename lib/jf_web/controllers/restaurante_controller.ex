@@ -18,7 +18,7 @@ defmodule JfWeb.RestauranteController do
     case Restaurantes.create_restaurante(restaurante_params) do
       {:ok, restaurante} ->
         conn
-        |> put_flash(:info, "Restaurante created successfully.")
+        |> put_flash(:info, "Restaurante criado com sucesso.")
         |> redirect(to: restaurante_path(conn, :show, restaurante))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule JfWeb.RestauranteController do
     case Restaurantes.update_restaurante(restaurante, restaurante_params) do
       {:ok, restaurante} ->
         conn
-        |> put_flash(:info, "Restaurante updated successfully.")
+        |> put_flash(:info, "Restaurante alterado com sucesso.")
         |> redirect(to: restaurante_path(conn, :show, restaurante))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", restaurante: restaurante, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule JfWeb.RestauranteController do
     {:ok, _restaurante} = Restaurantes.delete_restaurante(restaurante)
 
     conn
-    |> put_flash(:info, "Restaurante deleted successfully.")
+    |> put_flash(:info, "Restaurante deletado com sucesso.")
     |> redirect(to: restaurante_path(conn, :index))
   end
 end

@@ -1,4 +1,4 @@
-<h2>Show Restaurante</h2>
+<h2>Ver Restaurante</h2>
 
 <ul>
 
@@ -24,5 +24,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: restaurante_path(@conn, :edit, @restaurante) %></span>
-<span><%= link "Back", to: restaurante_path(@conn, :index) %></span>
+<span><%= link "Editar", to: restaurante_path(@conn, :edit, @restaurante) %></span>
+<span><%= link "Voltar", to: restaurante_path(@conn, :index) %></span>

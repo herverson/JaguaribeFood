@@ -20,7 +20,7 @@ defmodule JfWeb.ProdutoController do
     case Catalogo.create_produto(produto_params) do
       {:ok, produto} ->
         conn
-        |> put_flash(:info, "Produto created successfully.")
+        |> put_flash(:info, "Produto criado com sucesso.")
         |> redirect(to: produto_path(conn, :show, produto))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -44,7 +44,7 @@ defmodule JfWeb.ProdutoController do
     case Catalogo.update_produto(produto, produto_params) do
       {:ok, produto} ->
         conn
-        |> put_flash(:info, "Produto updated successfully.")
+        |> put_flash(:info, "Produto alterado com sucesso.")
         |> redirect(to: produto_path(conn, :show, produto))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", produto: produto, changeset: changeset)
@@ -56,7 +56,7 @@ defmodule JfWeb.ProdutoController do
     {:ok, _produto} = Catalogo.delete_produto(produto)
 
     conn
-    |> put_flash(:info, "Produto deleted successfully.")
+    |> put_flash(:info, "Produto deletado com sucesso.")
     |> redirect(to: produto_path(conn, :index))
   end
 end

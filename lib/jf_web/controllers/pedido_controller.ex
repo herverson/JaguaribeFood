@@ -18,7 +18,7 @@ defmodule JfWeb.PedidoController do
     case Vendas.create_pedido(pedido_params) do
       {:ok, pedido} ->
         conn
-        |> put_flash(:info, "Pedido created successfully.")
+        |> put_flash(:info, "Pedido criado com sucesso.")
         |> redirect(to: pedido_path(conn, :show, pedido))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule JfWeb.PedidoController do
     case Vendas.update_pedido(pedido, pedido_params) do
       {:ok, pedido} ->
         conn
-        |> put_flash(:info, "Pedido updated successfully.")
+        |> put_flash(:info, "Pedido alterado com sucesso.")
         |> redirect(to: pedido_path(conn, :show, pedido))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", pedido: pedido, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule JfWeb.PedidoController do
     {:ok, _pedido} = Vendas.delete_pedido(pedido)
 
     conn
-    |> put_flash(:info, "Pedido deleted successfully.")
+    |> put_flash(:info, "Pedido deletado com sucesso.")
     |> redirect(to: pedido_path(conn, :index))
   end
 end

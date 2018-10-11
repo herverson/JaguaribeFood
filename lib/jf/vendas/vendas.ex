@@ -5,7 +5,7 @@ defmodule Jf.Vendas do
 
   import Ecto.Query, warn: false
   alias Jf.Repo
-
+  alias Jf.Vendas.Cart
   alias Jf.Vendas.Pedido
 
   @doc """

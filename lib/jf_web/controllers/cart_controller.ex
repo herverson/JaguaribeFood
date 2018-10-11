@@ -18,7 +18,7 @@ defmodule JfWeb.CartController do
     case Vendas.create_cart(cart_params) do
       {:ok, cart} ->
         conn
-        |> put_flash(:info, "Cart created successfully.")
+        |> put_flash(:info, "Carrinho criado com sucesso.")
         |> redirect(to: cart_path(conn, :show, cart))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule JfWeb.CartController do
     case Vendas.update_cart(cart, cart_params) do
       {:ok, cart} ->
         conn
-        |> put_flash(:info, "Cart updated successfully.")
+        |> put_flash(:info, "Carrinho alterado com sucesso.")
         |> redirect(to: cart_path(conn, :show, cart))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", cart: cart, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule JfWeb.CartController do
     {:ok, _cart} = Vendas.delete_cart(cart)
 
     conn
-    |> put_flash(:info, "Cart deleted successfully.")
+    |> put_flash(:info, "Carrinho deletado com sucesso.")
     |> redirect(to: cart_path(conn, :index))
   end
 end

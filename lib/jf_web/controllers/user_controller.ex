@@ -24,11 +24,11 @@ defmodule JfWeb.UserController do
         conn
         |> put_flash(:info, "Bem vindo!")
         |> put_session(:user_id, user.id)
-        |> redirect(to: produto_path(conn, :index))
+        |> redirect(to: page_path(conn, :index))
       {:error, _reason} ->
         conn
         |> put_flash(:error, "Erro ao entrar")
-        |> redirect(to: produto_path(conn, :index))
+        |> redirect(to: page_path(conn, :index))
     end
   end
 

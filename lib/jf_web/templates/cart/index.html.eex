@@ -1,9 +1,9 @@
-<h2>Listing Cart</h2>
+<h2>Ver Cart</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Id produto</th>
+
       <th>Nome</th>
       <th>Quantidade</th>
       <th>Preço unitário</th>
@@ -13,22 +13,26 @@
     </tr>
   </thead>
   <tbody>
+
 <%= for cart <- @cart do %>
     <tr>
-      <td><%= cart.id_produto %></td>
+
       <td><%= cart.nome_produto %></td>
       <td><%= cart.quantidade %></td>
       <td><%= cart.preco_unitario %></td>
       <td><%= cart.total %></td>
-
       <td class="text-right">
-        <span><%= link "Ver", to: cart_path(@conn, :show, cart), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Editar", to: cart_path(@conn, :edit, cart), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Deletar", to: cart_path(@conn, :delete, cart), method: :delete, data: [confirm: "Tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+        <%= link to: cart_path(@conn, :delete, cart), method: :delete, data: [confirm: "Tem certeza?"], class: "btn-floating btn-large waves-effect waves-light red btn-small" do %>
+          <i class="material-icons">remove</i>
+        <% end %>
       </td>
     </tr>
+
 <% end %>
+<tr>
+
+</tr>
   </tbody>
 </table>
 
-<span><%= link "Criar", to: cart_path(@conn, :new) %></span>
+<span><%= link "Finalizar compra", to: pedido_path(@conn, :new), class: "btn btn-primary" %></span>
