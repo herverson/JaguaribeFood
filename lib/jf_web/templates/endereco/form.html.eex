@@ -5,47 +5,49 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :uf, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :uf, class: "form-control" %>
+    <%= label f, :uf%>
     <%= error_tag f, :uf %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :cidade, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :cidade, class: "form-control" %>
+    <%= label f, :cidade%>
     <%= error_tag f, :cidade %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :endereco, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :endereco, class: "form-control" %>
+    <label for="endereco_endereco">Endereço</label>
     <%= error_tag f, :endereco %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :numero, class: "control-label" %>
+  <div class="input-field">
     <%= number_input f, :numero, class: "form-control" %>
+    <label for="numer">Número</label>
     <%= error_tag f, :numero %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :complemento, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :complemento, class: "form-control" %>
+    <%= label f, :complemento%>
     <%= error_tag f, :complemento %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :pontoreferencia, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :pontoreferencia, class: "form-control" %>
+    <label for="endereco_pontoreferencia">Ponto de referência</label>
     <%= error_tag f, :pontoreferencia %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :local, class: "control-label" %>
-    <%= text_input f, :local, class: "form-control" %>
-    <%= error_tag f, :local %>
-  </div>
+
+    <div class="input-field">
+      <%= text_input f, :local, class: "validate" %>
+      <%= label f, :local%>
+      <%= error_tag f, :local %>
+    </div>
+
 
   <div class="form-group">
     <%= submit "Cadastrar", class: "btn btn-primary" %>

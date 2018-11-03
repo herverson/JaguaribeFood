@@ -5,27 +5,27 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :nome_produto, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :nome_produto, class: "form-control" %>
+    <label for="cart_nome_produto">Nome do produto</label>
     <%= error_tag f, :nome_produto %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :quantidade, class: "control-label" %>
+  <div class="input-field">
     <%= number_input f, :quantidade, class: "form-control" %>
+    <%= label f, :quantidade %>
     <%= error_tag f, :quantidade %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :preco_unitario, class: "control-label" %>
+  <div class="input-field">
     <%= number_input f, :preco_unitario, step: "any", class: "form-control" %>
+    <label for="cart_preco_unitario">Preço</label>
     <%= error_tag f, :preco_unitario %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :total, class: "control-label" %>
+  <div class="input-field">
     <%= number_input f, :total, step: "any", class: "form-control" %>
+    <%= label f, :total %>
     <%= error_tag f, :total %>
   </div>
 

@@ -10,7 +10,7 @@
     <title>Jf!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--<link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">-->
+    <!-- <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"> -->
   </head>
 
   <body>
@@ -37,6 +37,7 @@
         <% else %>
           <div class="nav-wrapper">
             <ul class="right hide-on-med-and-down">
+              <li><%= link "Carrinho", to: cart_path(@conn, :index) %></li>
             <li><%= link "Entrar com Facebook", to: user_path(@conn, :request, "facebook") %></li></ul>
           </div>
         <% end %>

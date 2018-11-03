@@ -5,27 +5,27 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :name, class: "form-control" %>
+    <%= label f, :name %>
     <%= error_tag f, :name %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :email, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :email, class: "form-control" %>
+    <%= label f, :email %>
     <%= error_tag f, :email %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :provider, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :provider, class: "form-control" %>
+    <%= label f, :provider %>
     <%= error_tag f, :provider %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :token, class: "control-label" %>
+  <div class="input-field">
     <%= text_input f, :token, class: "form-control" %>
+    <%= label f, :token %>
     <%= error_tag f, :token %>
   </div>
 
