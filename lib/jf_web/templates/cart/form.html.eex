@@ -7,7 +7,7 @@
 
   <div class="input-field">
     <%= text_input f, :nome_produto, class: "form-control" %>
-    <label for="cart_nome_produto">Nome do produto</label>
+    <%= label f, :nome_produto, "Nome do produto" %>
     <%= error_tag f, :nome_produto %>
   </div>
 
@@ -19,7 +19,7 @@
 
   <div class="input-field">
     <%= number_input f, :preco_unitario, step: "any", class: "form-control" %>
-    <label for="cart_preco_unitario">Preço</label>
+    <%= label f, :preco_unitario, "Preço" %>
     <%= error_tag f, :preco_unitario %>
   </div>
 

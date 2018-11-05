@@ -19,13 +19,13 @@
 
   <div class="input-field">
     <%= text_input f, :endereco, class: "form-control" %>
-    <label for="endereco_endereco">Endereço</label>
+    <%= label f, :endereco, "Endereço" %>
     <%= error_tag f, :endereco %>
   </div>
 
   <div class="input-field">
     <%= number_input f, :numero, class: "form-control" %>
-    <label for="numer">Número</label>
+    <%= label f, :numero , "Número" %>
     <%= error_tag f, :numero %>
   </div>
 
@@ -37,7 +37,7 @@
 
   <div class="input-field">
     <%= text_input f, :pontoreferencia, class: "form-control" %>
-    <label for="endereco_pontoreferencia">Ponto de referência</label>
+    <%= label f, :pontoreferencia , "Ponto de referência" %>
     <%= error_tag f, :pontoreferencia %>
   </div>
 

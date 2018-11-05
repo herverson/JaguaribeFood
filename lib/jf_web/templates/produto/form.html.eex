@@ -13,13 +13,13 @@
 
   <div class="input-field">
     <%= text_input f, :descricao, class: "form-control" %>
-    <label for="produto_descricao">Descrição</label>
+    <%= label f, :descricao , "Descrição" %>
     <%= error_tag f, :descricao %>
   </div>
 
   <div class="input-field">
     <%= number_input f, :preco, step: "any", class: "form-control" %>
-    <label for="produto_preco">Preço unitário</label>
+    <%= label f, :preco , "Preço unitário" %>
     <%= error_tag f, :preco %>
   </div>
 

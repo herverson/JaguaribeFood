@@ -13,13 +13,13 @@
 
   <div class="input-field">
     <%= text_input f, :descricao,class: "form-control" %>
-    <label for="restaurante_descricao">Descrição</label>
+    <%= label f, :descricao , "Descrição" %>
     <%= error_tag f, :descricao %>
   </div>
 
   <div class="input-field">
     <%= text_input f, :endereco, class: "form-control" %>
-    <label for="restaurante_endereco">Endereço</label>
+    <%= label f, :endereco , "Endereço" %>
     <%= error_tag f, :endereco %>
   </div>
 
