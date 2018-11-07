@@ -19,7 +19,7 @@
 
   <li>
     <strong>Imagem:</strong>
-    <%= @produto.imagem %>
+    <img height=100 width=auto src="<%=  Jf.ImageFile.url({@produto.imagem, @produto})%>"
   </li>
 
 </ul>

@@ -21,7 +21,9 @@ config :jf, JfWeb.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
-
+# configuração das imagens
+config :arc,
+  storage: Arc.Storage.Local
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

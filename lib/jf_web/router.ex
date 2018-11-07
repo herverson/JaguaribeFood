@@ -13,6 +13,10 @@ defmodule JfWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
   end
+  
+  defimpl Phoenix.HTML.Safe, for: Map do
+    def to_iodata(data), do: data |> Poison.encode! |> Plug.HTML.html_escape
+  end
 
   scope "/", JfWeb do
     pipe_through :browser # Use the default browser stack

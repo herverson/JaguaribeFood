@@ -1,9 +1,8 @@
-defmodule Jf.ImageUploader do
+defmodule Jf.ImageFile do
   use Arc.Definition
-  use Arc.Ecto.Definition
 
   # Include ecto support (requires package arc_ecto installed):
-  # use Arc.Ecto.Definition
+  use Arc.Ecto.Definition
 
   @versions [:original]
 

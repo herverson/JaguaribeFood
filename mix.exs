@@ -41,12 +41,12 @@ defmodule Jf.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:arc, "~> 0.5.2"},
-      {:arc_ecto, "~> 0.4.4"},
-      {:materialize, "~> 0.3.1"},
+      {:arc, "~> 0.8.0"},
+      {:arc_ecto, "~> 0.8.0"},
       {:distillery, "~> 2.0"},
       {:ueberauth, "~> 0.4"},
-      {:ueberauth_facebook, "~> 0.7"}
+      {:ueberauth_facebook, "~> 0.7"},
+      {:poison, "~> 3.1"}
     ]
   end
 
