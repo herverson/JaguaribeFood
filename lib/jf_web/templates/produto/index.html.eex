@@ -17,7 +17,7 @@
       <td><%= produto.nome %></td>
       <td><%= produto.descricao %></td>
       <td>R$ <%= produto.preco %></td>
-      <td><img height=100 width=auto src="<%= Jf.ImageFile.url({produto.imagem, produto})%>"></td>
+      <td><img class="materialboxed" height=100 width=auto src="<%= Jf.ImageFile.url({produto.imagem, produto})%>"></td>
       <td><input class="form-control" id="" name="" type="number" value="1" style="width: 70px"></td>
 
       <td class="text-right">

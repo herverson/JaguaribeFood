@@ -19,7 +19,7 @@
 
   <li>
     <strong>Logo marca:</strong>
-    <%= @restaurante.logo_marca %>
+    <img height=100 width=auto src="<%=  Jf.ImageFile.url({@restaurante.logo_marca, @restaurante})%>">
   </li>
 
 </ul>
