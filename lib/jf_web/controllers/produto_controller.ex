@@ -3,7 +3,7 @@ defmodule JfWeb.ProdutoController do
 
   alias Jf.Catalogo
   alias Jf.Catalogo.Produto
-  plug JfWeb.Plugs.RequireUser when action in [:new]
+  plug JfWeb.Plugs.RequireUser when action in  [:new, :create, :edit, :update, :delete]
 
 
   def index(conn, _params) do
