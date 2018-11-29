@@ -1,10 +1,20 @@
-<h2>Ver Pedido</h2>
+<h2>Show Pedido</h2>
 
 <ul>
 
   <li>
-    <strong>Status:</strong>
-    <%= @pedido.status %>
+    <strong>Nome produto:</strong>
+    <%= @pedido.nome_produto %>
+  </li>
+
+  <li>
+    <strong>Quantidade:</strong>
+    <%= @pedido.quantidade %>
+  </li>
+
+  <li>
+    <strong>Preco unitario:</strong>
+    <%= @pedido.preco_unitario %>
   </li>
 
   <li>
@@ -13,26 +23,11 @@
   </li>
 
   <li>
-    <strong>User:</strong>
-    <%= @pedido.user_id %>
-  </li>
-
-  <li>
-    <strong>Email:</strong>
-    <%= @pedido.email %>
-  </li>
-
-  <li>
-    <strong>Telefone:</strong>
-    <%= @pedido.telefone %>
-  </li>
-
-  <li>
-    <strong>Endereço:</strong>
-    <%= @pedido.endereco %>
+    <strong>Status:</strong>
+    <%= @pedido.status %>
   </li>
 
 </ul>
 
-<span><%= link "Editar", to: pedido_path(@conn, :edit, @pedido) %></span>
-<span><%= link "Voltar", to: pedido_path(@conn, :index) %></span>
+<span><%= link "Edit", to: pedido_path(@conn, :edit, @pedido) %></span>
+<span><%= link "Back", to: pedido_path(@conn, :index) %></span>

@@ -8,9 +8,11 @@
     <meta name="author" content="">
 
     <title>Jf!</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
@@ -20,17 +22,14 @@
 
         <%= if @conn.assigns[:user] do %>
           <ul id="dropdown1" class="dropdown-content">
-
-            <li><%= link "Carrinho", to: cart_path(@conn, :index) %></li>
-            <li><%= link "Endereços", to: endereco_path(@conn, :index) %></li>
-            <li class="divider"></li>
+            <!--<li class="divider"></li>-->
             <li> <%= link "Sair", to: user_path(@conn, :signout) %></li>
           </ul>
           <div class="nav-wrapper">
             <ul class="right hide-on-med-and-down">
-              <!-- <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li> -->
-              <!-- Dropdown Trigger -->
+              <li><%= link "Meus pedidos", to: pedido_path(@conn, :index) %></li>
+              <li><%= link "Carrinho", to: cart_path(@conn, :index) %></li>
+              <li><%= link "Endereços", to: endereco_path(@conn, :index) %></li>
               <li><a class="dropdown-trigger" href="/" data-target="dropdown1"><%= @conn.assigns.user.email %><i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
           </div>
@@ -49,9 +48,7 @@
 
       </header>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
+     
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>

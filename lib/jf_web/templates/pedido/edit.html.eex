@@ -1,5 +1,5 @@
-<h2>Editar Pedido</h2>
+<h2>Edit Pedido</h2>
 
 <%= render "form.html", Map.put(assigns, :action, pedido_path(@conn, :update, @pedido)) %>
 
-<span><%= link "Voltar", to: pedido_path(@conn, :index) %></span>
+<span><%= link "Back", to: pedido_path(@conn, :index) %></span>

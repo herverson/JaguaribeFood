@@ -1,1 +1,34 @@
-/* This file is for your main application css. */
+.card-title{
+    padding: 10px;
+}
+.card-title{
+	min-height: 57px;
+}
+.message-content{
+	border: 1px solid #dcdada;
+	background: #f9f9f9;
+}
+.message{
+	background: #f1f0f0;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.message-support{
+	background: #448AFF;
+	color: #fff;
+}
+p.message-title{
+	font-size: 18px;
+}
+p.message-date{
+	font-size: 10px;
+    font-weight: bold;
+}
+.message-title-support{
+	font-size: 12px;
+	float: right;
+}
+h5{
+	display: inline-block;
+}

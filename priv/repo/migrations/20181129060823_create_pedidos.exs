@@ -3,12 +3,11 @@ defmodule Jf.Repo.Migrations.CreatePedidos do
 
   def change do
     create table(:pedidos) do
-      add :status, :string
+      add :nome_produto, :string
+      add :quantidade, :integer
+      add :preco_unitario, :decimal
       add :total, :decimal
-      add :user_id, :integer
-      add :email, :string
-      add :telefone, :string
-      add :endereco, :string
+      add :status, :string
 
       timestamps()
     end

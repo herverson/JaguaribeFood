@@ -3,7 +3,7 @@ defmodule JfWeb.UserSocket do
 
   ## Channels
   channel "carrinho:*", JfWeb.CarrinhoChannel
-
+  channel "chat_room:lobby", JfWeb.ChatRoomChannel
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket,
     timeout: 45_000

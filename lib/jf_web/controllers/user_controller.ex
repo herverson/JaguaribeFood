@@ -15,7 +15,7 @@ defmodule JfWeb.UserController do
   def signout(conn, _params) do
     conn
     |> configure_session(drop: true)
-    |> redirect(to: produto_path(conn, :index))
+    |> redirect(to: page_path(conn, :index))
   end
 
   defp signin(conn, changeset) do

@@ -29,6 +29,7 @@ defmodule JfWeb.Router do
     resources "/restaurantes", RestauranteController
     resources "/pedidos", PedidoController
     resources "/cart", CartController
+    resources "/messages", MessageController
 
   end
 

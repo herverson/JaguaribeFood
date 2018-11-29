@@ -1,14 +1,14 @@
 defmodule JfWeb.PedidoControllerTest do
   use JfWeb.ConnCase
 
-  alias Jf.Vendas
+  alias Jf.Pedidos
 
-  @create_attrs %{email: "some email", endereco: "some endereco", status: "some status", telefone: "some telefone", total: "120.5", user_id: 42}
-  @update_attrs %{email: "some updated email", endereco: "some updated endereco", status: "some updated status", telefone: "some updated telefone", total: "456.7", user_id: 43}
-  @invalid_attrs %{email: nil, endereco: nil, status: nil, telefone: nil, total: nil, user_id: nil}
+  @create_attrs %{nome_produto: "some nome_produto", preco_unitario: "120.5", quantidade: 42, status: "some status", total: 42}
+  @update_attrs %{nome_produto: "some updated nome_produto", preco_unitario: "456.7", quantidade: 43, status: "some updated status", total: 43}
+  @invalid_attrs %{nome_produto: nil, preco_unitario: nil, quantidade: nil, status: nil, total: nil}
 
   def fixture(:pedido) do
-    {:ok, pedido} = Vendas.create_pedido(@create_attrs)
+    {:ok, pedido} = Pedidos.create_pedido(@create_attrs)
     pedido
   end
 
@@ -60,7 +60,7 @@ defmodule JfWeb.PedidoControllerTest do
       assert redirected_to(conn) == pedido_path(conn, :show, pedido)
 
       conn = get conn, pedido_path(conn, :show, pedido)
-      assert html_response(conn, 200) =~ "some updated email"
+      assert html_response(conn, 200) =~ "some updated nome_produto"
     end
 
     test "renders errors when data is invalid", %{conn: conn, pedido: pedido} do

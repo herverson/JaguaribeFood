@@ -1,0 +1,70 @@
+<!--<div id='message-list' class='row'>
+</div>
+
+<div class='row form-group'>
+  <div class='col-md-3'>
+    
+  </div>
+  <div class='col-md-9'>
+    <input type='text' id='msg' class='form-control' placeholder='Message' />
+  </div>
+</div> 
+
+-->
+  <!-- Chat css -->
+ 	<!--
+
+Follow me on
+Dribbble: https://dribbble.com/supahfunk
+Twitter: https://twitter.com/supahfunk
+Codepen: https://codepen.io/supah/
+
+It's just a concept, a fake chat to design a new daily UI for direct messaging.
+Hope you like it :)
+
+-->
+<input type='hidden' id='name' class='form-control' value="<%= List.first (String.split(@conn.assigns.user.email,"@")) %>"/>
+	<div class="card message-card">
+			<div class="card-title">
+				<h5>Chat Pedidos</h5>
+				<div class="settings" style="display:inline-block;float:right;margin-right:20px;">
+				
+	        	</div>
+			</div>
+			<div class="card-content message-content" id="content_messages" style="max-height: 400px; overflow-y: scroll;">
+				<div class="message">
+					<div class="">
+						<p class="message-title">
+							<span>
+
+							</span>
+						</p>
+						<p class="message-text" id='message-list'></p>
+						<p class="message-date">
+							<i class="material-icons">today</i>
+							20-09-2018
+						</p>
+					</div>
+				</div>
+			
+			<div class="card-footer bottom" id="bottom">
+				<form id="form" method="POST">
+					<div class="row" style="margin: 0px;">
+						<div class="input-field col s10" style="margin: 0px;">
+							<textarea class="materialize-textarea" id='msg'></textarea> 
+	          				<label>Digite sua mensagem</label>
+						</div>
+						<div class="input-field col s1" style="margin: 0px;">
+				    		<button type="button" class="btn btn-floating waves-effect waves-light" >
+				    			<i class="material-icons">cloud_upload</i>
+				    		</button>
+						</div>
+						<div class="input-field col s1" style="margin: 0px;">
+				    		<button type="submit" class="btn btn-floating waves-effect waves-light">
+				    			<i class="material-icons">send</i>
+				    		</button>
+						</div>
+					</div>
+				</form>
+		  	</div>
+		</div>

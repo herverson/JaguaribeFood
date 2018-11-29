@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Preço unitário</th>
+      <th>Total</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+<%= for cart <- @cart do %>
+    <tr>
+
+      <td><%= cart.nome_produto %></td>
+      <td><%= cart.quantidade %></td>
+      <td><%= cart.preco_unitario %></td>
+      <td><%= cart.total %></td>
+
+    </tr>
+
+<% end %>
+<tr>
+
+</tr>
+  </tbody>
+</table>
