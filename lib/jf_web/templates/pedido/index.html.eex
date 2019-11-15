@@ -31,5 +31,3 @@
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "Novo Pedido", to: pedido_path(@conn, :new), class: "btn btn-default btn-xs" %></span>

@@ -25,7 +25,7 @@ defmodule JfWeb.PedidoController do
       {:ok, pedido} ->
         conn
         |> put_flash(:info, "Pedido created successfully.")
-        |> redirect(to: pedido_path(conn, :show, pedido))
+        |> redirect(to: pedido_path(conn, :index))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset, cart: cart)
     end

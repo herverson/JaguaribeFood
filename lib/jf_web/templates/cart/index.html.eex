@@ -22,7 +22,6 @@
       <td><%= cart.preco_unitario %></td>
       <td><%= cart.total %></td>
       <td class="text-right">
-       <span><%= link "Ver", to: cart_path(@conn, :show, cart), class: "btn btn-default btn-xs" %></span>
         <%= link to: cart_path(@conn, :delete, cart), method: :delete, data: [confirm: "Tem certeza?"], class: "btn-floating btn-large waves-effect waves-light red btn-small" do %>
           <i class="material-icons">remove</i>
         <% end %>

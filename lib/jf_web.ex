@@ -40,6 +40,7 @@ defmodule JfWeb do
       import JfWeb.Router.Helpers
       import JfWeb.ErrorHelpers
       import JfWeb.Gettext
+      import JfWeb.Helpers.Auth, only: [signed_in?: 1]
     end
   end
 

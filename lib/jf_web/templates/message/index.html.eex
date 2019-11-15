@@ -23,7 +23,7 @@ It's just a concept, a fake chat to design a new daily UI for direct messaging.
 Hope you like it :)
 
 -->
-<input type='hidden' id='name' class='form-control' value="<%= List.first (String.split(@conn.assigns.user.email,"@")) %>"/>
+<input type='hidden' id='name' class='form-control' value="<%= if @conn.assigns[:user] do %> <%= List.first (String.split(@conn.assigns.user.email,"@")) %> <% else %> Bugger <% end %>"/>
 	<div class="card message-card">
 			<div class="card-title">
 				<h5>Chat Pedidos</h5>

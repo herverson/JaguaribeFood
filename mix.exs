@@ -46,6 +46,8 @@ defmodule Jf.Mixfile do
       {:distillery, "~> 2.0"},
       {:ueberauth, "~> 0.4"},
       {:ueberauth_facebook, "~> 0.7"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"},
       {:poison, "~> 3.1"}
     ]
   end
